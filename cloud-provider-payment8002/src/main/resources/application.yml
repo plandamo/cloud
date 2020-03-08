@@ -1,0 +1,25 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: cloud-provider-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://192.168.31.47:3306/orchard?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    password: liujinshan
+    username: root
+
+mybatis:
+  #MyBatis相关自定义配置
+  #configLocation: classpath:mybatis.xml
+  #实体类所做包
+  type-aliases-package: com.atguigu.springcloud.entities
+  #mapper.xml所在位置
+  mapperLocations: classpath:mapper/*.xml
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka  #注册中心的注册地址

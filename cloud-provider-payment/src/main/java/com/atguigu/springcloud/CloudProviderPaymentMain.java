@@ -3,6 +3,7 @@ package com.atguigu.springcloud;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
@@ -14,9 +15,11 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @Date: 2020/3/6 13:48
  * @Version: 1.0
  */
-@MapperScan("com.atguigu.springcloud.dao") //扫描的mapper
+
+//@MapperScan("com.atguigu.springcloud.dao") //扫描的mapper
 @SpringBootApplication
 @EnableEurekaClient
+@EnableDiscoveryClient
 public class CloudProviderPaymentMain {
     public static void main(String[] args) {
         SpringApplication.run(CloudProviderPaymentMain.class,args);

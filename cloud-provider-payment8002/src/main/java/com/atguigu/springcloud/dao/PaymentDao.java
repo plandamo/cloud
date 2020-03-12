@@ -1,6 +1,7 @@
 package com.atguigu.springcloud.dao;
 
 import com.atguigu.springcloud.entities.Payment;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Repository;
  * @Date: 2020/3/6 16:02
  * @Version: 1.0
  */
-@Repository
+@Mapper
 public interface PaymentDao {
 
     int insert(Payment payment);

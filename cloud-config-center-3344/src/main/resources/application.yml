@@ -1,0 +1,28 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zzyybs/springcloud-config.git
+          search-paths:
+            - springcloud-config
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+rabbitmq:
+    host: 192.168.31.47
+    post: 15672
+    username: admin
+    password: admin
+#rabbitmq配置相关，暴露bus刷新配置端点
+management:
+  endpoints: #暴露bus刷新配置端点
+    web:
+      exposure:
+        include: 'bus-refresh'

@@ -22,4 +22,8 @@ public class CommonResult<T> {
     private String errorMassage;
     private T data;
 
+    public CommonResult(int errorCode, String errorMassage) {
+        errorCode = this.errorCode;
+        errorMassage = this.errorMassage;
+    }
 }
